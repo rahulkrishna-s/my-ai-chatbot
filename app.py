@@ -20,14 +20,29 @@ try:
 except Exception as e:
     st.error("Could not connect to API. Make sure API key is correct.")
 
+# Initialize session state for messages
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Add new game button
+with st.sidebar:
+    st.header("Game Controls")
+    if st.button("New Game", use_container_width=True):
+        st.session_state.messages = []
+        st.rerun()
+    
+    # Display game stats
+    st.divider()
+    st.subheader("Current Game Stats")
+    question_count = len([msg for msg in st.session_state.messages if msg["role"] == "user"])
+    st.metric("Questions Asked", question_count)
+
+# Display chat history
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["parts"][0])
 
-
+# Chat input
 user_input = st.chat_input("Ask Gemini something...")
 
 if user_input:
