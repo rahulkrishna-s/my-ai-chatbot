@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 
-st.title("My Gemini Chatbot")
+st.title("GuessWho - AI Guessing Game")
 
 system_prompt = """
 You are a 'Guess Who' game master (like Akinator). 

@@ -1,2 +1,2 @@
-# my-ai-chatbot
-An AI chatbot built using Streamlit and free Gemini API. Intends to expand this project into something more specialized soon.
+# guesswho-ai
+Akinator-style yes/no guessing game using Gemini API and streamlit.
