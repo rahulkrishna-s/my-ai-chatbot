@@ -4,7 +4,6 @@ import google.generativeai as genai
 st.set_page_config(page_title="GuessWho AI")
 st.title("GuessWho - AI Guessing Game")
 
-# Game settings
 MAX_QUESTIONS = 20
 
 system_prompt = """
